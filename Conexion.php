@@ -1,7 +1,7 @@
 <?php
 
-class Conection{
-    private $dsn = "mysql:host=127.0.0.1:3306;dbname=ejemplo3";
+class Conexion{
+    private $dsn = "mysql:host=127.0.0.1:3306;dbname=ejemplo4";
     private $username = "root";
     private $password = "";
     private $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"');
