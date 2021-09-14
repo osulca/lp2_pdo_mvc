@@ -1,4 +1,5 @@
 <?php
+use app\controlador\CursoController;
 require_once "app\controlador\CursoController.php";
 $cursoController = new CursoController();
 

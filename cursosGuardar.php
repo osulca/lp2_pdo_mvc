@@ -1,3 +1,6 @@
+<?php
+use app\controlador\CursoController;
+?>
 <form method="post" action="<?=$_SERVER["PHP_SELF"]?>">
     <input type="text" name="nombre" placeholder="Ingrese curso">
     <input type="submit" name="submit" value="Guardar">

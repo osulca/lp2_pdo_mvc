@@ -1,5 +1,8 @@
 <?php
-require_once "Conexion.php";
+namespace app\modelo;
+use config\Conexion;
+
+require_once "config\Conexion.php";
 
 class Curso{
     private $id;
@@ -32,7 +35,7 @@ class Curso{
             $resultados = $conn->conectar->query($sql);
             $conn->desconectar();
             return $resultados;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return $e->getMessage();
         }
     }
@@ -44,7 +47,7 @@ class Curso{
             $resultados = $conn->conectar->query($sql);
             $conn->desconectar();
             return $resultados;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return $e->getMessage();
         }
     }
@@ -56,7 +59,7 @@ class Curso{
             $resultados = $conn->conectar->exec($sql);
             $conn->desconectar();
             return $resultados;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return $e->getMessage();
         }
     }
@@ -68,7 +71,7 @@ class Curso{
             $resultados = $conn->conectar->exec($sql);
             $conn->desconectar();
             return $resultados;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return $e->getMessage();
         }
     }
@@ -80,7 +83,7 @@ class Curso{
             $resultados = $conn->conectar->exec($sql);
             $conn->desconectar();
             return $resultados;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             return $e->getMessage();
         }
     }

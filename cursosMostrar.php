@@ -1,4 +1,5 @@
 <?php
+use app\controlador\CursoController;
 require_once "app\controlador\CursoController.php";
 $resultados = CursoController::mostrarTodo();
 
@@ -31,3 +32,4 @@ if ($resultados->rowCount() == 0) {
     <a href="cursosGuardar.php">Registrar Curso</a>
     <?php
 }
+

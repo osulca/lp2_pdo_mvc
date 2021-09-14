@@ -1,9 +1,12 @@
 <?php
-require "app\modelo\Curso.php";
+namespace app\controlador;
+use app\modelo\Curso;
+
+require_once "config\autocarga.php";
 
 class CursoController{
 
-    public static function mostrarTodo(): PDOStatement{
+    public static function mostrarTodo(): \PDOStatement{
         $curso = new Curso();
         $resultados = $curso->mostrar();
         return $resultados;
@@ -22,18 +25,16 @@ class CursoController{
         return $data;
     }
 
-    public function guardar(string $nombre): string{
+    public function guardar(string $nombre){
         $curso = new Curso();
         $curso->setNombre($nombre);
         $resultado = $curso->guardar();
 
         if($resultado!=1){
-            $mensaje = "no se guardó";
+            return $mensaje = "no se guardó";
         }else{
-            $mensaje = "se guardo";
+            header("location: cursosMostrar.php");
         }
-
-        return $mensaje;
     }
 
     public function actualizar(int $id, string $nombre): string{
@@ -49,15 +50,14 @@ class CursoController{
         return $mensaje;
     }
 
-    public function eliminar(int $id): string{
+    public function eliminar(int $id){
         $curso = new Curso();
         $curso->setId($id);
         $resultado = $curso->eliminar();
         if ($resultado != 1) {
-            $mensaje = "No se eliminó";
+            return $mensaje = "No se eliminó";
         } else {
-            $mensaje = "registro eliminado";
+            header("location: cursosMostrar.php");
         }
-        return $mensaje;
     }
 }
