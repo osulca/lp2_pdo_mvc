@@ -50,4 +50,16 @@ class Estudiante
             return $e->getMessage();
         }
     }
+
+    public function mostrar(){
+        try{
+            $conn = new Conexion();
+            $sql = "SELECT * FROM estudiantes";
+            $resultados = $conn->conectar->query($sql);
+            $conn->desconectar();
+            return $resultados;
+        }catch (\PDOException $e){
+            return $e->getMessage();
+        }
+    }
 }

@@ -18,4 +18,9 @@ class EstudianteController
             return "No se guardó";
         }
     }
+
+    public function mostrar(){
+        $estudiante = new Estudiante();
+        return $estudiante->mostrar();
+    }
 }
